@@ -69,9 +69,10 @@ class _InputPageState extends State<InputPage> {
 }
 
 class IconContent extends StatelessWidget {
-  const IconContent({
-    Key key,
-  }) : super(key: key);
+  final IconData icon;
+  final String label;
+
+  IconContent({@required this.icon, @required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -79,14 +80,14 @@ class IconContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Icon(
-          FontAwesomeIcons.mars,
+          icon,
           size: 80.0,
         ),
         SizedBox(
           height: 15.0,
         ),
         Text(
-          'MALE',
+          label,
           style: TextStyle(
             fontSize: 18.0,
             color: Color(0xff8e8e99),
