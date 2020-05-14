@@ -36,8 +36,8 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       colour: selectedGender == Gender.male
-                          ? activeCardColor
-                          : inactiveCardColor,
+                          ? kActiveCardColor
+                          : kInactiveCardColor,
                       cardChild: IconContent(
                         icon: FontAwesomeIcons.mars,
                         label: 'MALE',
@@ -52,8 +52,8 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       colour: selectedGender == Gender.female
-                          ? activeCardColor
-                          : inactiveCardColor,
+                          ? kActiveCardColor
+                          : kInactiveCardColor,
                       cardChild: IconContent(
                         icon: FontAwesomeIcons.venus,
                         label: 'FEMALE',
@@ -65,7 +65,7 @@ class _InputPageState extends State<InputPage> {
             ),
             Expanded(
               child: ReusableCard(
-                colour: activeCardColor,
+                colour: kActiveCardColor,
               ),
             ),
             Expanded(
@@ -73,22 +73,22 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Expanded(
                     child: ReusableCard(
-                      colour: activeCardColor,
+                      colour: kActiveCardColor,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      colour: activeCardColor,
+                      colour: kActiveCardColor,
                     ),
                   ),
                 ],
               ),
             ),
             Container(
-              color: borderContainerColor,
+              color: kBorderContainerColor,
               margin: EdgeInsets.only(top: 10.0),
               width: double.infinity,
-              height: borderContainerHeight,
+              height: kBorderContainerHeight,
             ),
           ],
         ));
