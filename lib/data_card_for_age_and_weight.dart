@@ -1,28 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'constants.dart';
-
-class RoundIconButton extends StatelessWidget {
-  final IconData icon;
-  final Function onPressed;
-
-  RoundIconButton({@required this.icon, @required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      shape: CircleBorder(),
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      elevation: 0.0,
-      onPressed: onPressed,
-      fillColor: Color(0xff4c4f5e),
-      child: Icon(icon),
-    );
-  }
-}
+import 'rount_icon_button.dart';
 
 class DataCardForAgeAndWeight extends StatelessWidget {
   final String label;
