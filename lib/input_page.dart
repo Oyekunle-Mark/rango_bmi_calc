@@ -176,9 +176,15 @@ class _InputPageState extends State<InputPage> {
               child: Container(
                 color: kBorderContainerColor,
                 margin: EdgeInsets.only(top: 10.0),
+                padding: EdgeInsets.only(bottom: 20.0),
                 width: double.infinity,
                 height: kBorderContainerHeight,
-                child: Text('CALCULATE'),
+                child: Center(
+                  child: Text(
+                    'CALCULATE',
+                    style: kLargeButtonTextStyle,
+                  ),
+                ),
               ),
             ),
           ],
