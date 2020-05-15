@@ -18,6 +18,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 170;
   int weight = 60;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -122,25 +123,40 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Expanded(
                     child: ReusableCard(
-                        colour: kActiveCardColor,
-                        cardChild: DataCardForAgeAndWeight(
-                          label: 'WEIGHT',
-                          value: weight,
-                          onPressedMinus: () {
-                            setState(() {
-                              weight--;
-                            });
-                          },
-                          onPressedPlus: () {
-                            setState(() {
-                              weight++;
-                            });
-                          },
-                        )),
+                      colour: kActiveCardColor,
+                      cardChild: DataCardForAgeAndWeight(
+                        label: 'WEIGHT',
+                        value: weight,
+                        onPressedMinus: () {
+                          setState(() {
+                            weight--;
+                          });
+                        },
+                        onPressedPlus: () {
+                          setState(() {
+                            weight++;
+                          });
+                        },
+                      ),
+                    ),
                   ),
                   Expanded(
                     child: ReusableCard(
                       colour: kActiveCardColor,
+                      cardChild: DataCardForAgeAndWeight(
+                        label: 'AGE',
+                        value: age,
+                        onPressedMinus: () {
+                          setState(() {
+                            age--;
+                          });
+                        },
+                        onPressedPlus: () {
+                          setState(() {
+                            age++;
+                          });
+                        },
+                      ),
                     ),
                   ),
                 ],
