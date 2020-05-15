@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'reusable_card.dart';
-import 'data_card_for_age_and_weight.dart';
-import 'icon_content.dart';
-import 'constants.dart';
-import 'result_page.dart';
-import 'button_bottom.dart';
+import '../components/reusable_card.dart';
+import '../components/data_card_for_age_and_weight.dart';
+import '../components/icon_content.dart';
+import '../constants.dart';
+import './result_page.dart';
+import '../components/button_bottom.dart';
 
 enum Gender {
   male,
