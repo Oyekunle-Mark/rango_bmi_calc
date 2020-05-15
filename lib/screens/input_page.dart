@@ -6,6 +6,7 @@ import '../components/icon_content.dart';
 import '../constants.dart';
 import './result_page.dart';
 import '../components/button_bottom.dart';
+import 'package:bmi_calculator/calculator_brain.dart';
 
 enum Gender {
   male,
@@ -19,9 +20,9 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  int height = 170;
-  int weight = 60;
-  int age = 20;
+  int _height = 170;
+  int _weight = 60;
+  int _age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +87,7 @@ class _InputPageState extends State<InputPage> {
                       textBaseline: TextBaseline.alphabetic,
                       children: <Widget>[
                         Text(
-                          height.toString(),
+                          _height.toString(),
                           style: kNumberTextStyle,
                         ),
                         Text(
@@ -107,12 +108,12 @@ class _InputPageState extends State<InputPage> {
                             RoundSliderOverlayShape(overlayRadius: 30.0),
                       ),
                       child: Slider(
-                        value: height.toDouble(),
+                        value: _height.toDouble(),
                         min: 120.0,
                         max: 220.0,
                         onChanged: (double newValue) {
                           setState(() {
-                            height = newValue.round();
+                            _height = newValue.round();
                           });
                         },
                       ),
@@ -129,15 +130,15 @@ class _InputPageState extends State<InputPage> {
                       colour: kActiveCardColor,
                       cardChild: DataCardForAgeAndWeight(
                         label: 'WEIGHT',
-                        value: weight,
+                        value: _weight,
                         onPressedMinus: () {
                           setState(() {
-                            weight--;
+                            _weight--;
                           });
                         },
                         onPressedPlus: () {
                           setState(() {
-                            weight++;
+                            _weight++;
                           });
                         },
                       ),
@@ -148,15 +149,15 @@ class _InputPageState extends State<InputPage> {
                       colour: kActiveCardColor,
                       cardChild: DataCardForAgeAndWeight(
                         label: 'AGE',
-                        value: age,
+                        value: _age,
                         onPressedMinus: () {
                           setState(() {
-                            age--;
+                            _age--;
                           });
                         },
                         onPressedPlus: () {
                           setState(() {
-                            age++;
+                            _age++;
                           });
                         },
                       ),
@@ -168,6 +169,9 @@ class _InputPageState extends State<InputPage> {
             BottomButton(
               buttonTitle: 'CALCULATE',
               onTab: () {
+                CalculatorBrain calc =
+                    CalculatorBrain(weight: _weight, height: _height);
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(
