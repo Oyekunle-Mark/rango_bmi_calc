@@ -4,6 +4,15 @@ import '../components/reusable_card.dart';
 import 'package:bmi_calculator/components/button_bottom.dart';
 
 class ResultPage extends StatelessWidget {
+  final String bmi;
+  final String resultText;
+  final String interpretation;
+
+  ResultPage(
+      {@required this.bmi,
+      @required this.resultText,
+      @required this.interpretation});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
