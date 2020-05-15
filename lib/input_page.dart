@@ -123,43 +123,7 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       colour: kActiveCardColor,
-                      cardChild: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            'WEIGHT',
-                            style: kLabelTextStyle,
-                          ),
-                          Text(
-                            weight.toString(),
-                            style: kNumberTextStyle,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              RoundIconButton(
-                                icon: FontAwesomeIcons.minus,
-                                onPressed: () {
-                                  setState(() {
-                                    weight--;
-                                  });
-                                },
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              RoundIconButton(
-                                icon: FontAwesomeIcons.plus,
-                                onPressed: () {
-                                  setState(() {
-                                    weight++;
-                                  });
-                                },
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                      cardChild:
                     ),
                   ),
                   Expanded(
@@ -199,6 +163,48 @@ class RoundIconButton extends StatelessWidget {
       onPressed: onPressed,
       fillColor: Color(0xff4c4f5e),
       child: Icon(icon),
+    );
+  }
+}
+
+class DataCardForAgeAndWeight extends StatelessWidget {
+  final String label;
+  final int value;
+  final Function onPressedMinus;
+  final Function onPressedPlus;
+
+  DataCardForAgeAndWeight({this.label, this.value, this.onPressedMinus, this.onPressedPlus});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text(
+          label,
+          style: kLabelTextStyle,
+        ),
+        Text(
+          value.toString(),
+          style: kNumberTextStyle,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RoundIconButton(
+              icon: FontAwesomeIcons.minus,
+              onPressed: onPressedMinus,
+            ),
+            SizedBox(
+              width: 10.0,
+            ),
+            RoundIconButton(
+              icon: FontAwesomeIcons.plus,
+              onPressed: onPressedPlus,
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
