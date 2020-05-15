@@ -98,7 +98,7 @@ class _InputPageState extends State<InputPage> {
                       inactiveColor: kGrayColor,
                       onChanged: (double newValue) {
                         setState(() {
-                          height = newValue.toInt();
+                          height = newValue.round();
                         });
                       },
                     ),
