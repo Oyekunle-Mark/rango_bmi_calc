@@ -122,9 +122,21 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Expanded(
                     child: ReusableCard(
-                      colour: kActiveCardColor,
-                      cardChild:
-                    ),
+                        colour: kActiveCardColor,
+                        cardChild: DataCardForAgeAndWeight(
+                          label: 'WEIGHT',
+                          value: weight,
+                          onPressedMinus: () {
+                            setState(() {
+                              weight--;
+                            });
+                          },
+                          onPressedPlus: () {
+                            setState(() {
+                              weight++;
+                            });
+                          },
+                        )),
                   ),
                   Expanded(
                     child: ReusableCard(
@@ -173,7 +185,8 @@ class DataCardForAgeAndWeight extends StatelessWidget {
   final Function onPressedMinus;
   final Function onPressedPlus;
 
-  DataCardForAgeAndWeight({this.label, this.value, this.onPressedMinus, this.onPressedPlus});
+  DataCardForAgeAndWeight(
+      {this.label, this.value, this.onPressedMinus, this.onPressedPlus});
 
   @override
   Widget build(BuildContext context) {
