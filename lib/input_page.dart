@@ -164,7 +164,17 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            BottomButton(),
+            BottomButton(
+              buttonTitle: 'CALCULATE',
+              onTab: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ));
   }
