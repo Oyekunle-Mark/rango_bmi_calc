@@ -202,7 +202,10 @@ class DataCardForAgeAndWeight extends StatelessWidget {
   final Function onPressedPlus;
 
   DataCardForAgeAndWeight(
-      {this.label, this.value, this.onPressedMinus, this.onPressedPlus});
+      {@required this.label,
+      @required this.value,
+      @required this.onPressedMinus,
+      @required this.onPressedPlus});
 
   @override
   Widget build(BuildContext context) {
